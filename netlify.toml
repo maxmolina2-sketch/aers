@@ -1,4 +1,4 @@
-# Sitio estático: no requiere compilación.
+# AERS en terreno: sitio estático, no requiere compilación.
 [build]
   publish = "."
   command = ""
@@ -8,10 +8,9 @@
   [headers.values]
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    # Permite usar el micrófono solo desde este mismo sitio
-    Permissions-Policy = "microphone=(self), camera=(self), geolocation=(self)"
+    Permissions-Policy = "microphone=(), camera=(self), geolocation=(self)"
 
 [[headers]]
-  for = "/js/*"
+  for = "/sw.js"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
